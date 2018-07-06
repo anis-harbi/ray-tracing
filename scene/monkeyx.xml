@@ -1,0 +1,73 @@
+<scene>
+  <image> 300 300 </image>
+
+  <sampler type="JitteredSampler">
+    <numSamplesU>5</numSamplesU>
+    <numSamplesV>5</numSamplesV>
+  </sampler>
+
+  <renderer type="BruteForcePathTracer">
+      
+  </renderer>
+
+  <light type="PointLight">
+      <location>-2. 0. 2.</location>
+      <diffuse>0.1 0. 0.</diffuse>
+      <specular>0.1 0.1 0.1</specular>
+  </light>
+
+  <light type="PointLight">
+      <location>2. 0. 2.</location>
+      <diffuse>0.0 0.1 0.</diffuse>
+      <specular>0.1 0.1 0.1</specular>
+  </light>
+
+  <camera>
+    <eye>1.58661 -5.47871 4.04662</eye>
+    <target>1.35925 -4.66916 3.53846</target>
+    <up>-0.144899 0.498646 0.854609</up>
+    <yFOV>40</yFOV>
+  </camera>
+
+  <material name="white" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.75 0.75 0.75</reflectance>
+    </brdf>
+  </material>
+  <material name="red" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.6 0.05 0.05</reflectance>
+    </brdf>
+  </material>
+  <material name="green" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.1 0.45 0.15</reflectance>
+    </brdf>
+  </material>
+  <material name="grey" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.4 0.4 0.4</reflectance>
+    </brdf>
+  </material>
+
+  <material name="light" type="LambertianEmitter">
+    <brdf type="Lambertian">
+      <reflectance>0.78 0.78 0.78</reflectance>
+    </brdf>
+    <radiance>120 120 90</radiance>
+  </material>
+
+
+  <surface type="Mesh">
+    <material ref="green" />
+    <data>floor.msh</data>
+  </surface>
+
+  <surface type="Mesh">
+    <material ref="red" />
+    <data>monkey.msh</data>
+  </surface>
+
+
+
+</scene>
